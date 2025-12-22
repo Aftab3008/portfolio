@@ -698,7 +698,7 @@ class App {
     let clickedMedia: Media | null = null;
     let minDistance = Infinity;
 
-    this.medias.forEach((media) => {
+    this.medias.forEach((media: Media) => {
       const mediaWorldX = media.plane.position.x;
       const mediaWorldY = media.plane.position.y;
       const halfWidth = media.plane.scale.x / 2;
@@ -721,8 +721,9 @@ class App {
 
     if (clickedMedia) {
       // Map the clicked media to the original project index
-      const actualIndex = clickedMedia.index % this.mediasImages.length;
-      this.onItemClick(actualIndex);
+      const actualIndex =
+        (clickedMedia as Media).index % this.mediasImages.length;
+      this.onItemClick?.(actualIndex);
     }
   }
 

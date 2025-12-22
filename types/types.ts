@@ -27,6 +27,13 @@ export interface Project {
   category: "Web" | "Mobile" | "Desktop" | "AI/ML" | "Other";
 }
 
+export interface Achievement {
+  title: string;
+  description: string;
+  imageUrl: string;
+  otherLinks?: string;
+}
+
 export interface Education {
   institution: string;
   degree: string;
@@ -34,7 +41,7 @@ export interface Education {
   startDate: string;
   endDate: string;
   gpa?: string;
-  achievements?: string[];
+  achievements?: Achievement[];
   logo?: string;
 }
 

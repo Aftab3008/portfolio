@@ -147,7 +147,7 @@ export default function Dock({
         initial={{ y: 100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
-        className={`${className} flex items-center w-fit gap-1 rounded-2xl border border-white/20 py-2 px-4 bg-black/60 backdrop-blur-xl shadow-2xl shadow-black/50`}
+        className={`${className} flex items-center w-fit gap-4 rounded-2xl border border-white/20 py-2 px-4 bg-black/60 backdrop-blur-xl shadow-2xl shadow-black/50`}
         style={{ height: panelHeight }}
         role="toolbar"
         aria-label="Application dock"
@@ -156,7 +156,7 @@ export default function Dock({
           <DockItem
             key={index}
             onClick={item.onClick}
-            className={item.className}
+            className={`${item.className} hover:text-black! hover:bg-white!`}
             baseItemSize={baseItemSize}
           >
             <DockIcon>{item.text || item.icon}</DockIcon>

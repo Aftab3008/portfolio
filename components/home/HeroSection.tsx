@@ -21,9 +21,6 @@ const iconMap: Record<string, any> = {
 };
 
 export default function HeroSection() {
-  const name = personalInfo.name;
-  const [firstName, lastName] = name.split(" ");
-
   // Get social links (excluding email for top bar)
   const topSocialLinks = socialLinks.filter((link) => link.icon !== "Mail");
 
@@ -67,7 +64,7 @@ export default function HeroSection() {
           </a>
         </Button>
 
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-3">
           {topSocialLinks.map((social, index) => {
             const Icon = iconMap[social.icon];
             return (
@@ -79,12 +76,12 @@ export default function HeroSection() {
                 initial={{ opacity: 0, scale: 0 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.2 + index * 0.1, duration: 0.4 }}
-                whileHover={{ scale: 1.1, y: -2 }}
-                whileTap={{ scale: 0.95 }}
-                className="text-neutral-400 hover:text-white transition-colors"
+                whileHover={{ scale: 1.15, y: -3 }}
+                whileTap={{ scale: 0.9 }}
+                className="p-3 rounded-xl bg-neutral-800/40 border border-neutral-700/50 text-neutral-300 hover:text-white hover:bg-neutral-800/70 hover:border-neutral-600 transition-all duration-300 backdrop-blur-sm"
                 aria-label={social.name}
               >
-                <Icon className="h-5 w-5" />
+                <Icon className="h-6 w-6" />
               </motion.a>
             );
           })}
@@ -98,22 +95,14 @@ export default function HeroSection() {
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           className="text-center mb-8"
         >
-          <h1 className="text-6xl md:text-8xl lg:text-9xl font-black tracking-tighter leading-none">
+          <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black tracking-tighter leading-none">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.7 }}
-              className="text-white mb-2 md:mb-4"
+              className="text-white whitespace-nowrap"
             >
-              {firstName}
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5, duration: 0.7 }}
-              className="text-white"
-            >
-              {lastName}
+              {personalInfo.name}
             </motion.div>
           </h1>
         </motion.div>

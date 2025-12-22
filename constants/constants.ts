@@ -1,5 +1,6 @@
 import type { Variants } from "motion/react";
 import type {
+  Achievement,
   Education,
   Experience,
   Project,
@@ -79,7 +80,8 @@ export const personalInfo = {
   email: "shaikaftab005@gmail.com",
   location: "Hyderabad, India",
   bio: "Passionate software developer with expertise in building scalable web applications. I love turning complex problems into simple, beautiful, and intuitive solutions. When I'm not coding, you can find me exploring new technologies or contributing to open-source projects.",
-  resumeUrl: "https://example.com/resume.pdf",
+  resumeUrl:
+    "https://drive.google.com/file/d/1MaZ-9dlzhs9o1Hho00tc0Y_TQGsyM9Ya/view?usp=sharing",
 };
 
 export const skillCategories = {
@@ -113,175 +115,138 @@ export const skillCategories = {
   "Technologies & Cloud": ["Git", "GitHub", "Linux", "Docker", "AWS", "Vercel"],
 };
 
-// Experience
 export const experiences: Experience[] = [
   {
-    company: "Tech Innovations Inc.",
-    role: "Senior Full Stack Developer",
-    startDate: "Jan 2023",
-    endDate: "Present",
+    company: "Duke And Clyde Innovation Center",
+    role: "Software Development Intern",
+    startDate: "Nov 2024",
+    endDate: "Dec 2024",
     achievements: [
-      "Led development of a customer-facing SaaS platform serving 10,000+ users",
-      "Reduced page load times by 60% through code splitting and optimization",
-      "Mentored 3 junior developers and established code review best practices",
-      "Architected microservices infrastructure reducing deployment time by 40%",
+      "Optimized frontend performance by implementing lightweight React.js components, achieving faster load times and a smoother user interface",
+      "Monitored AWS-hosted application health and streamlined cloud infrastructure to minimize downtime during deployment cycles",
+      "Integrated a secure authentication flow using OAuth 2.0, enabling third-party sign-on and ensuring secure session management",
     ],
-    technologies: [
-      "React",
-      "Next.js",
-      "TypeScript",
-      "Node.js",
-      "PostgreSQL",
-      "AWS",
-      "Docker",
-    ],
-  },
-  {
-    company: "Digital Solutions Co.",
-    role: "Full Stack Developer",
-    startDate: "Jun 2021",
-    endDate: "Dec 2022",
-    achievements: [
-      "Built responsive web applications for clients across various industries",
-      "Implemented real-time features using WebSockets and Server-Sent Events",
-      "Improved application performance by 45% through database optimization",
-      "Collaborated with designers to create pixel-perfect UI implementations",
-    ],
-    technologies: [
-      "React",
-      "Node.js",
-      "Express",
-      "MongoDB",
-      "Redux",
-      "Tailwind CSS",
-    ],
-  },
-  {
-    company: "Startup Ventures",
-    role: "Junior Developer",
-    startDate: "Jan 2020",
-    endDate: "May 2021",
-    achievements: [
-      "Developed and maintained 5+ client websites using modern frameworks",
-      "Participated in Agile development processes and daily standups",
-      "Created reusable component libraries to speed up development",
-      "Gained experience with testing frameworks and CI/CD pipelines",
-    ],
-    technologies: ["JavaScript", "React", "Vue.js", "Firebase", "Git"],
+    technologies: ["React", "TypeScript", "AWS", "OAuth 2.0", "Node.js", "Git"],
   },
 ];
 
-// Projects
 export const projects: Project[] = [
   {
-    title: "E-Commerce Platform",
-    description:
-      "A full-featured online store with payment integration, inventory management, and admin dashboard",
-    longDescription:
-      "Built a complete e-commerce solution with Stripe payment processing, real-time inventory tracking, customer authentication, order management, and a comprehensive admin panel. Features include product search, filtering, cart management, and email notifications.",
+    title: "LearnHub",
+    description: "Scalable LMS Platform for Video Courses",
+    // longDescription:
+    //   "Built a robust authentication system that reduced login/register API response times by 50% by offloading email delivery to background workers. Engineered a custom React video player integrated with HLS.js, enabling adaptive bitrate streaming (ABS) to prevent buffering and ensure a seamless viewing experience. Leveraged message queues to frequently accessed data like course retrieval times by 40% and significantly reducing database load. Implemented global state management with Zustand and enhanced data fetching using React Query to reduce UI load times by 30% and ensure responsiveness.",
     technologies: [
       "Next.js",
-      "TypeScript",
       "Prisma",
-      "PostgreSQL",
-      "Stripe",
-      "Tailwind CSS",
-      "Resend",
-    ],
-    githubUrl: "https://github.com/yourusername/ecommerce-platform",
-    liveUrl: "https://ecommerce-demo.vercel.app",
-    featured: true,
-    category: "Web",
-    imageUrl: "/projects/ecommerce.jpg",
-  },
-  {
-    title: "Task Management App",
-    description:
-      "Collaborative task management tool with real-time updates and team features",
-    longDescription:
-      "A Trello-like task management application with drag-and-drop functionality, real-time collaboration using WebSockets, team workspaces, deadline tracking, and notifications. Includes calendar integration and activity logs.",
-    technologies: [
-      "React",
-      "Node.js",
-      "Socket.io",
+      "Express.js",
       "MongoDB",
-      "Express",
-      "Redux",
-      "Material UI",
+      "RabbitMQ",
+      "Redis",
+      "Zustand",
+      "React Query",
+      "HLS.js",
     ],
-    githubUrl: "https://github.com/yourusername/task-manager",
-    liveUrl: "https://task-app-demo.vercel.app",
+    githubUrl: "https://github.com/Aftab3008/shadow-course-hub",
+    liveUrl: "https://shadow-course-hub.vercel.app/",
     featured: true,
     category: "Web",
-    imageUrl: "/projects/taskapp.jpg",
+    imageUrl: "/projects/learnhub.png",
   },
   {
-    title: "AI Content Generator",
+    title: "AI Resume Enhancer",
+    description: "AI-Driven Career Analysis Tool",
+    // longDescription:
+    //   "Developed an AI-powered Resume Enhancer that delivers personalized career insights, leveraging market trend analysis and optimizing profiles for better job alignment. Integrated Groq Cloud's LLM API to deliver real-time career insights, optimizing prompt engineering for faster user responses and higher answer latency. Crafted a seamless resume editor praised by hackathon judges for its intuitive workflow and instant PDF export capabilities.",
+    technologies: ["React", "TypeScript", "Groq AI", "Clerk", "Prisma"],
+    githubUrl: "https://github.com/Aftab3008/resume-enhancer",
+    liveUrl: "https://resume-enhancer-two.vercel.app",
+    featured: true,
+    category: "Web",
+    imageUrl: "/projects/ai-resume-enhancer.png",
+  },
+  {
+    title: "Social Network CLI Application",
+    description: "A Java based Interactive Command-Line Social Platform",
+    // longDescription:
+    //   "Architected a Java-based command-line social network applying software engineering principles and advanced Object-Oriented Programming to deliver robust user, topic, and threaded-comment functionality. Designed a command-line interface for intuitive user interaction, post creation, topic search, and ensuring a robust user experience.",
+    technologies: [
+      "Java",
+      "Object Oriented Programming",
+      "CLI Design",
+      "File I/O",
+    ],
+    githubUrl: "https://github.com/Aftab3008/social_network",
+    liveUrl: "",
+    featured: true,
+    category: "Web",
+    imageUrl: "/projects/cli.png",
+  },
+  {
+    title: "CaseCobra",
     description:
-      "AI-powered tool for generating blog posts, social media content, and marketing copy",
-    longDescription:
-      "Leverages OpenAI's GPT models to generate high-quality content for various purposes. Features include customizable tone and style, content templates, SEO optimization suggestions, and export to multiple formats.",
+      "A E-commerce based SaaS application for customized phone cases",
+    // longDescription:
+    //   "CaseCobra is a full-featured e-commerce SaaS that allows users to create one-of-one custom phone cases. The platform features an interactive design studio where users can upload images, position them on various iPhone models, and preview the final product in real-time. With a focus on quality and user trust. It includes a seamless checkout process and a responsive design optimized for conversion.",
     technologies: [
       "Next.js",
-      "OpenAI API",
+      "React.js",
       "TypeScript",
-      "Tailwind CSS",
+      "Clerk",
+      "Stripe",
       "Prisma",
-      "PostgreSQL",
+      "Tailwind CSS",
     ],
-    githubUrl: "https://github.com/yourusername/ai-content-generator",
-    liveUrl: "https://ai-content-demo.vercel.app",
+    githubUrl: "https://github.com/Aftab3008/casecobra",
+    liveUrl: "https://casecobra-drab-psi.vercel.app/",
     featured: true,
-    category: "AI/ML",
-    imageUrl: "/projects/ai-content.jpg",
+    category: "Web",
+    imageUrl: "/projects/casecobra.png",
   },
   {
-    title: "Weather Dashboard",
-    description:
-      "Beautiful weather app with forecasts, maps, and location-based alerts",
-    longDescription:
-      "A comprehensive weather application featuring 7-day forecasts, interactive weather maps, severe weather alerts, location search with autocomplete, and weather history. Data visualization with charts and animations.",
+    title: "Livedocs",
+    description: "A Real-time collaborative editor",
+    // longDescription:
+    //   "LiveDocs is a collaborative workspace designed to rival tools like Google Docs. It enables multiple users to edit documents simultaneously with real-time presence (live cursors) and instant synchronization. The platform features a comprehensive rich-text editor, a threaded comment system for team communication, and a document management dashboard. Security is managed through a robust permission system, allowing document owners to grant specific 'Viewer' or 'Editor' access levels to other users via email.",
     technologies: [
-      "React",
-      "OpenWeather API",
-      "Recharts",
+      "Next.js",
+      "React.js",
+      "Liveblocks",
+      "Clerk",
       "TypeScript",
       "Tailwind CSS",
     ],
-    githubUrl: "https://github.com/yourusername/weather-dashboard",
-    liveUrl: "https://weather-app-demo.vercel.app",
-    featured: false,
+    githubUrl: "https://github.com/Aftab3008/livedocs",
+    liveUrl: "https://livedocs-lilac.vercel.app/",
+    featured: true,
     category: "Web",
-    imageUrl: "/projects/weather.jpg",
+    imageUrl: "/projects/livedocs.png",
   },
 ];
 
-// Education
 export const education: Education[] = [
   {
-    institution: "University of Technology",
+    institution:
+      "Indian Institute of Information Technology Design and Manufacturing, Kurnool",
     degree: "Bachelor of Science",
     field: "Computer Science",
-    startDate: "2016",
-    endDate: "2020",
-    gpa: "3.8/4.0",
+    startDate: "2022",
+    endDate: "2026",
+    gpa: "8.39/10",
     achievements: [
-      "Dean's List all semesters",
-      "Led university coding club with 50+ members",
-      "Winner of Regional Hackathon 2019",
-      "Published research paper on machine learning applications",
-    ],
-  },
-  {
-    institution: "Tech Academy",
-    degree: "Certificate",
-    field: "Full Stack Web Development",
-    startDate: "2019",
-    endDate: "2020",
-    achievements: [
-      "Completed 500+ hours of intensive coding bootcamp",
-      "Built 10+ full-stack applications",
-      "Mentored beginner students",
+      {
+        title: "GDG Hackathon Winner",
+        description:
+          "Winner (1st Place) of the GDG Hackathon, leading a cross-functional team to design and develop an AI Resume Enhancer, selected over 18+ competing teams due to technical execution and real-world impact.",
+        imageUrl: "/logos/gdg_logo.webp",
+      },
+      {
+        title: "LeetCode Knight Badge",
+        description:
+          "Achieved LeetCode Knight Badge and solved 800+ algorithmic challenges across LeetCode and CodeForces, demonstrating advanced mastery of DSA, including Sorting, Algorithms, Trees, Graphs, and Dynamic Programming.",
+        imageUrl: "/logos/leetcode_logo.jpeg",
+        otherLinks: "https://leetcode.com/u/shaikaftab005/",
+      },
     ],
   },
 ];
@@ -313,7 +278,6 @@ export const socialLinks: SocialLink[] = [
   },
 ];
 
-// Section IDs for navigation
 export const sections = {
   hero: "hero",
   skills: "skills",

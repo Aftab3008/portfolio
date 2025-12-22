@@ -43,5 +43,5 @@ export default function HomeDock() {
     ),
   }));
 
-  return <Dock items={itemsWithMagnet} panelHeight={56} />;
+  return <Dock items={itemsWithMagnet} panelHeight={56} className="px-20" />;
 }

@@ -10,6 +10,7 @@ import ExperienceSection from "@/components/home/ExperienceSection";
 import ProjectsSection from "@/components/home/ProjectsSection";
 import EducationSection from "@/components/home/EducationSection";
 import ContactSection from "@/components/home/ContactSection";
+import Footer from "@/components/home/Footer";
 import LoadingScreen from "@/components/LoadingScreen";
 
 export default function Home() {
@@ -94,6 +95,9 @@ export default function Home() {
         </div>
         <div className="section-animate">
           <ContactSection />
+        </div>
+        <div className="section-animate">
+          <Footer />
         </div>
         <HomeDock />
       </div>

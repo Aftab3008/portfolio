@@ -1,0 +1,15 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="java-cli-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#a855f7;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1e293b;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#java-cli-gradient)"/>
+  <text x="50%" y="45%" font-family="Arial, sans-serif" font-size="60" font-weight="bold" fill="#ffffff" text-anchor="middle" opacity="0.9">
+    Java Social
+  </text>
+  <text x="50%" y="55%" font-family="Arial, sans-serif" font-size="24" fill="#c4b5fd" text-anchor="middle" opacity="0.8">
+    CLI Application
+  </text>
+</svg>

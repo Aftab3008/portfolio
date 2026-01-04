@@ -128,7 +128,7 @@ export default function SkillsSection() {
         <div className="mb-20">
           <h2
             ref={headingRef}
-            className="text-4xl md:text-6xl lg:text-7xl font-black leading-tight mb-6 max-w-5xl opacity-0"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 max-w-5xl opacity-0"
           >
             I MAKE SOFTWARES THAT WORKS FOR YOU, NOT THE OTHER WAY AROUND...
           </h2>
@@ -159,7 +159,7 @@ export default function SkillsSection() {
 
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24">
           <div ref={bioRef} className="space-y-8 opacity-0">
-            <p className="text-lg md:text-xl text-neutral-300 leading-relaxed">
+            <p className="text-lg md:text-xl text-neutral-300 leading-relaxed font-normal">
               {personalInfo.bio}
             </p>
           </div>
@@ -169,10 +169,10 @@ export default function SkillsSection() {
               const categorySkills = skillNames;
               return (
                 <div key={category} className="skill-category-item opacity-0">
-                  <h3 className="text-xl md:text-2xl font-bold mb-4 text-white">
+                  <h3 className="text-xl md:text-2xl font-semibold mb-4 text-white">
                     {category}
                   </h3>
-                  <p className="text-base md:text-lg text-neutral-400 leading-relaxed">
+                  <p className="text-base md:text-lg text-neutral-400 leading-relaxed font-normal">
                     {categorySkills.join(", ")}
                   </p>
                 </div>

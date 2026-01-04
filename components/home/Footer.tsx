@@ -102,19 +102,19 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto">
         <div className="grid md:grid-cols-2 gap-8 mb-8">
           <div ref={leftColumnRef} className="space-y-3 opacity-0">
-            <h3 className="text-2xl font-bold text-white">
+            <h3 className="text-xl md:text-2xl font-semibold text-white">
               {personalInfo.name}
             </h3>
-            <p className="text-neutral-400 text-sm leading-relaxed">
+            <p className="text-neutral-400 text-sm leading-relaxed font-normal">
               {personalInfo.title}
             </p>
-            <p className="text-neutral-500 text-xs">
+            <p className="text-neutral-500 text-xs font-normal">
               Crafting digital experiences with precision and passion.
             </p>
           </div>
 
           <div ref={rightColumnRef} className="space-y-3">
-            <h4 className="text-lg font-bold text-white inline-block w-fit">
+            <h4 className="text-base md:text-lg font-semibold text-white inline-block w-fit">
               Quick Links
             </h4>
             <nav className="flex flex-col space-y-2">
@@ -122,7 +122,7 @@ export default function Footer() {
                 <a
                   key={section}
                   href={`#${section.toLowerCase()}`}
-                  className="footer-quick-link text-neutral-400 hover:text-white transition-colors text-sm opacity-0 inline-block w-fit hover:translate-x-1 transform duration-200 hover:underline hover:underline-offset-4"
+                  className="footer-quick-link text-neutral-400 hover:text-white transition-colors text-sm opacity-0 inline-block w-fit hover:translate-x-1 transform duration-200 hover:underline hover:underline-offset-4 font-normal"
                 >
                   {section}
                 </a>

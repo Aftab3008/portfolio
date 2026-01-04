@@ -117,7 +117,7 @@ export default function ExperienceSection() {
         <div className="mb-20">
           <h2
             ref={headingRef}
-            className="text-4xl md:text-6xl lg:text-7xl font-black leading-tight mb-6 max-w-5xl opacity-0"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 max-w-5xl opacity-0"
           >
             WHERE I'VE BUILT AND LEARNED...
           </h2>
@@ -133,10 +133,10 @@ export default function ExperienceSection() {
                 <div>
                   <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-2 mb-3">
                     <div className="exp-role">
-                      <h3 className="text-2xl md:text-3xl font-bold text-white">
+                      <h3 className="text-xl md:text-2xl font-semibold text-white">
                         {experience.role}
                       </h3>
-                      <p className="text-xl md:text-2xl text-neutral-400 mt-1">
+                      <p className="text-lg md:text-xl text-neutral-400 mt-1 font-normal">
                         {experience.company}
                       </p>
                     </div>
@@ -150,7 +150,7 @@ export default function ExperienceSection() {
                   {experience.achievements.map((achievement, i) => (
                     <li
                       key={i}
-                      className="exp-achievement text-base md:text-lg text-neutral-300 leading-relaxed"
+                      className="exp-achievement text-base md:text-lg text-neutral-300 leading-relaxed font-normal"
                     >
                       {achievement}
                     </li>
@@ -158,7 +158,7 @@ export default function ExperienceSection() {
                 </ul>
 
                 <div className="exp-technologies pt-4">
-                  <p className="text-base md:text-lg text-neutral-500">
+                  <p className="text-base md:text-lg text-neutral-500 font-normal">
                     {experience.technologies.join(" • ")}
                   </p>
                 </div>

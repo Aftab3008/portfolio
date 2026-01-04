@@ -204,25 +204,13 @@ export default function HeroSection({ isVisible = true }: HeroSectionProps) {
 
         <div className="w-full max-w-7xl grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-end">
           <div ref={bioLeftRef} className="text-left opacity-0">
-            <p
-              className="text-white text-base md:text-lg leading-relaxed font-medium"
-              style={{
-                textShadow:
-                  "2px 2px 8px rgba(0, 0, 0, 0.8), 0 0 20px rgba(0, 0, 0, 0.6)",
-              }}
-            >
+            <p className="text-white text-base md:text-lg leading-relaxed font-medium text-glow">
               {personalInfo.bio}
             </p>
           </div>
 
           <div ref={bioRightRef} className="text-right opacity-0">
-            <p
-              className="text-white text-base md:text-lg leading-relaxed font-medium"
-              style={{
-                textShadow:
-                  "2px 2px 8px rgba(0, 0, 0, 0.8), 0 0 20px rgba(0, 0, 0, 0.6)",
-              }}
-            >
+            <p className="text-white text-base md:text-lg leading-relaxed font-medium text-glow">
               {personalInfo.tagline}{" "}
               <span className="inline-flex items-center">
                 <span className="inline-block w-2 h-2 bg-green-500 rounded-full ml-2 animate-pulse" />

@@ -27,6 +27,10 @@ export default function Home() {
   const contentRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    if (isLoading) {
+      return;
+    }
+
     if (blobity.current) {
       blobityRef.current = blobity.current;
     }
@@ -37,7 +41,7 @@ export default function Home() {
         blobityRef.current = null;
       }
     };
-  }, []);
+  }, [isLoading, blobity]);
 
   useEffect(() => {
     document.documentElement.classList.add("overflow-hidden");
@@ -94,6 +98,7 @@ export default function Home() {
           <LoadingScreen />
         </div>
       )}
+
       <div ref={contentRef} className="relative w-full">
         <div className="section-animate">
           <HeroSection isVisible={!isLoading} />

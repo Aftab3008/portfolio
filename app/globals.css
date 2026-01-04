@@ -124,11 +124,33 @@ html.overflow-hidden {
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-normal;
   }
 
   html {
     scroll-behavior: smooth;
+    font-size: 16px;
+  }
+
+  /* Typography utility classes */
+  .section-heading {
+    @apply text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight;
+  }
+
+  .sub-heading {
+    @apply text-xl md:text-2xl font-semibold;
+  }
+
+  .body-text {
+    @apply text-base md:text-lg text-neutral-300 leading-relaxed font-normal;
+  }
+
+  .small-text {
+    @apply text-sm md:text-base text-neutral-400 font-normal;
+  }
+
+  .text-glow {
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8), 0 0 20px rgba(0, 0, 0, 0.6);
   }
 
   /* Custom scrollbar for webkit browsers */
@@ -168,9 +190,7 @@ html.overflow-hidden {
 
 .glitch {
   color: #fff;
-  font-size: clamp(2rem, 10vw, 8rem);
   white-space: nowrap;
-  font-weight: 900;
   position: relative;
   margin: 0 auto;
   user-select: none;

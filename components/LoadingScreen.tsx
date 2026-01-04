@@ -8,7 +8,7 @@ const LoadingScreen = () => {
       <GlitchText
         speed={0.4}
         enableShadows={true}
-        className="text-4xl! md:text-6xl!"
+        className="text-4xl md:text-6xl lg:text-7xl font-bold"
       >
         Design, Develop, Deploy.
       </GlitchText>

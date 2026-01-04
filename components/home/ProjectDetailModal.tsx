@@ -77,7 +77,7 @@ export default function ProjectDetailModal({
             </div>
 
             <div>
-              <h3 className="text-xl font-bold text-white mb-3">
+              <h3 className="text-xl md:text-2xl font-semibold text-white mb-3">
                 Technologies
               </h3>
               <div className="flex flex-wrap gap-2">
@@ -104,7 +104,7 @@ export default function ProjectDetailModal({
                     href={project.githubUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 border border-neutral-700 bg-neutral-800/50 hover:bg-neutral-800 text-white rounded-md transition-colors font-medium"
+                    className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 border border-neutral-700 bg-neutral-800/50 hover:bg-neutral-800 text-white rounded-md transition-colors font-semibold"
                   >
                     <FaGithub className="h-5 w-5" />
                     View Source Code
@@ -121,7 +121,7 @@ export default function ProjectDetailModal({
                     href={project.liveUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 bg-white hover:bg-neutral-200 text-black rounded-md transition-colors font-bold"
+                    className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 bg-white hover:bg-neutral-200 text-black rounded-md transition-colors font-semibold"
                   >
                     <FaExternalLinkAlt className="h-4 w-4" />
                     Visit Live Demo

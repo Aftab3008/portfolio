@@ -128,13 +128,13 @@ export default function ProjectsSection() {
         <div className="mb-16">
           <h2
             ref={headingRef}
-            className="text-4xl md:text-6xl lg:text-7xl font-black leading-tight mb-6 opacity-0"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 opacity-0"
           >
             PROJECTS THAT SHOWCASE MY TECHNICAL EXPERTISE AND CREATIVITY
           </h2>
           <p
             ref={descriptionRef}
-            className="text-lg md:text-xl text-neutral-300 leading-relaxed max-w-3xl opacity-0"
+            className="text-lg md:text-xl text-neutral-300 leading-relaxed max-w-3xl opacity-0 font-normal"
           >
             Explore my portfolio of innovative solutions—from scalable web
             platforms to AI-driven tools. Each project demonstrates
@@ -149,7 +149,7 @@ export default function ProjectsSection() {
             bend={3}
             textColor="#ffffff"
             borderRadius={0.05}
-            font="bold 15px Figtree"
+            font="bold 16px sans-serif"
             scrollSpeed={2}
             scrollEase={0.05}
             onItemClick={handleProjectClick}
@@ -157,7 +157,7 @@ export default function ProjectsSection() {
         </div>
 
         <div ref={instructionRef} className="text-center mt-8 opacity-0">
-          <p className="text-neutral-400 text-sm md:text-base">
+          <p className="text-neutral-400 text-sm md:text-base font-normal">
             Scroll or drag to explore • Click on any project to view details
           </p>
         </div>

@@ -110,7 +110,8 @@
   mask-mode: luminance;
   mask-repeat: repeat;
   mask-size: 150%;
-  mask-position: top calc(200% - (var(--background-y) * 5)) left calc(100% - var(--background-x));
+  mask-position: top calc(200% - (var(--background-y) * 5)) left
+    calc(100% - var(--background-x));
   transition: filter 0.8s ease;
   filter: brightness(0.66) contrast(1.33) saturate(0.33) opacity(0.5);
   animation: holo-bg 18s linear infinite;
@@ -128,8 +129,7 @@
   background: transparent;
   background-size: cover;
   background-position: center;
-  background-image:
-    repeating-linear-gradient(
+  background-image: repeating-linear-gradient(
       0deg,
       var(--sunpillar-clr-1) calc(var(--space) * 1),
       var(--sunpillar-clr-2) calc(var(--space) * 2),
@@ -154,21 +154,16 @@
       hsla(0, 0%, 0%, 0.15) 20%,
       hsla(0, 0%, 0%, 0.25) 120%
     );
-  background-position:
-    0 var(--background-y),
-    var(--background-x) var(--background-y),
-    center;
+  background-position: 0 var(--background-y),
+    var(--background-x) var(--background-y), center;
   background-blend-mode: color, hard-light;
-  background-size:
-    500% 500%,
-    300% 300%,
-    200% 200%;
+  background-size: 500% 500%, 300% 300%, 200% 200%;
   background-repeat: repeat;
 }
 
 .pc-shine::before,
 .pc-shine::after {
-  content: '';
+  content: "";
   background-position: center;
   background-size: cover;
   grid-area: 1/1;
@@ -190,8 +185,7 @@
 }
 
 .pc-shine::before {
-  background-image:
-    linear-gradient(
+  background-image: linear-gradient(
       45deg,
       var(--sunpillar-4),
       var(--sunpillar-5),
@@ -200,31 +194,26 @@
       var(--sunpillar-2),
       var(--sunpillar-3)
     ),
-    radial-gradient(circle at var(--pointer-x) var(--pointer-y), hsl(0, 0%, 70%) 0%, hsla(0, 0%, 30%, 0.2) 90%),
+    radial-gradient(
+      circle at var(--pointer-x) var(--pointer-y),
+      hsl(0, 0%, 70%) 0%,
+      hsla(0, 0%, 30%, 0.2) 90%
+    ),
     var(--grain);
-  background-size:
-    250% 250%,
-    100% 100%,
-    220px 220px;
-  background-position:
-    var(--pointer-x) var(--pointer-y),
-    center,
+  background-size: 250% 250%, 100% 100%, 220px 220px;
+  background-position: var(--pointer-x) var(--pointer-y), center,
     calc(var(--pointer-x) * 0.01) calc(var(--pointer-y) * 0.01);
   background-blend-mode: color-dodge;
-  filter: brightness(calc(2 - var(--pointer-from-center))) contrast(calc(var(--pointer-from-center) + 2))
+  filter: brightness(calc(2 - var(--pointer-from-center)))
+    contrast(calc(var(--pointer-from-center) + 2))
     saturate(calc(0.5 + var(--pointer-from-center)));
   mix-blend-mode: luminosity;
 }
 
 .pc-shine::after {
-  background-position:
-    0 var(--background-y),
-    calc(var(--background-x) * 0.4) calc(var(--background-y) * 0.5),
-    center;
-  background-size:
-    200% 300%,
-    700% 700%,
-    100% 100%;
+  background-position: 0 var(--background-y),
+    calc(var(--background-x) * 0.4) calc(var(--background-y) * 0.5), center;
+  background-size: 200% 300%, 700% 700%, 100% 100%;
   mix-blend-mode: difference;
   filter: brightness(0.8) contrast(1.5);
 }
@@ -254,8 +243,9 @@
   position: absolute;
   left: 50%;
   transform-origin: 50% 100%;
-  transform: translateX(calc(-50% + (var(--pointer-from-left) - 0.5) * 6px)) translateZ(0)
-    scaleY(calc(1 + (var(--pointer-from-top) - 0.5) * 0.02)) scaleX(calc(1 + (var(--pointer-from-left) - 0.5) * 0.01));
+  transform: translateX(calc(-50% + (var(--pointer-from-left) - 0.5) * 6px))
+    translateZ(0) scaleY(calc(1 + (var(--pointer-from-top) - 0.5) * 0.02))
+    scaleX(calc(1 + (var(--pointer-from-left) - 0.5) * 0.01));
   bottom: -1px;
   backface-visibility: hidden;
   will-change: transform;
@@ -263,7 +253,7 @@
 }
 
 .pc-avatar-content::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   z-index: 1;
@@ -285,7 +275,9 @@
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(30px);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: calc(max(0px, var(--card-radius) - var(--ui-inset) + var(--ui-radius-bias)));
+  border-radius: calc(
+    max(0px, var(--card-radius) - var(--ui-inset) + var(--ui-radius-bias))
+  );
   padding: 12px 14px;
   pointer-events: auto;
 }
@@ -320,14 +312,15 @@
 }
 
 .pc-handle {
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 500;
   color: rgba(255, 255, 255, 0.9);
   line-height: 1;
 }
 
 .pc-status {
-  font-size: 14px;
+  font-size: 0.875rem;
+  font-weight: 400;
   color: rgba(255, 255, 255, 0.7);
   line-height: 1;
 }
@@ -335,8 +328,8 @@
 .pc-contact-btn {
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 8px;
-  padding: 12px 16px;
-  font-size: 12px;
+  padding: 0.75rem 1rem;
+  font-size: 0.75rem;
   font-weight: 600;
   color: rgba(255, 255, 255, 0.9);
   cursor: pointer;
@@ -389,7 +382,7 @@
   position: relative;
   top: -12px;
   white-space: nowrap;
-  font-size: 16px;
+  font-size: 1rem;
   margin: 0 auto;
   width: min-content;
   background-image: linear-gradient(to bottom, #fff, #4a4ac0);
@@ -411,17 +404,11 @@
 
 @keyframes holo-bg {
   0% {
-    background-position:
-      0 var(--background-y),
-      0 0,
-      center;
+    background-position: 0 var(--background-y), 0 0, center;
   }
 
   100% {
-    background-position:
-      0 var(--background-y),
-      90% 90%,
-      center;
+    background-position: 0 var(--background-y), 90% 90%, center;
   }
 }
 
@@ -440,12 +427,12 @@
   }
 
   .pc-details p {
-    font-size: 14px;
+    font-size: 0.875rem;
   }
 
   .pc-user-info {
     --ui-inset: 15px;
-    padding: 10px 12px;
+    padding: 0.625rem 0.75rem;
   }
 
   .pc-mini-avatar {
@@ -458,16 +445,16 @@
   }
 
   .pc-handle {
-    font-size: 13px;
+    font-size: 0.8125rem;
   }
 
   .pc-status {
-    font-size: 10px;
+    font-size: 0.625rem;
   }
 
   .pc-contact-btn {
-    padding: 6px 12px;
-    font-size: 11px;
+    padding: 0.375rem 0.75rem;
+    font-size: 0.6875rem;
   }
 }
 
@@ -486,13 +473,13 @@
   }
 
   .pc-details p {
-    font-size: 12px;
+    font-size: 0.75rem;
     top: -8px;
   }
 
   .pc-user-info {
     --ui-inset: 12px;
-    padding: 8px 10px;
+    padding: 0.5rem 0.625rem;
   }
 
   .pc-mini-avatar {
@@ -505,16 +492,16 @@
   }
 
   .pc-handle {
-    font-size: 12px;
+    font-size: 0.75rem;
   }
 
   .pc-status {
-    font-size: 9px;
+    font-size: 0.5625rem;
   }
 
   .pc-contact-btn {
-    padding: 5px 10px;
-    font-size: 10px;
+    padding: 0.3125rem 0.625rem;
+    font-size: 0.625rem;
     border-radius: 50px;
   }
 }
@@ -530,11 +517,11 @@
   }
 
   .pc-details p {
-    font-size: 11px;
+    font-size: 0.6875rem;
   }
 
   .pc-user-info {
-    padding: 6px 8px;
+    padding: 0.375rem 0.5rem;
   }
 
   .pc-mini-avatar {
@@ -547,16 +534,16 @@
   }
 
   .pc-handle {
-    font-size: 11px;
+    font-size: 0.6875rem;
   }
 
   .pc-status {
-    font-size: 8px;
+    font-size: 0.5rem;
   }
 
   .pc-contact-btn {
-    padding: 4px 8px;
-    font-size: 9px;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.5625rem;
     border-radius: 50px;
   }
 }

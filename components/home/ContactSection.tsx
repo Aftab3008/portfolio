@@ -145,14 +145,14 @@ export default function ContactSection() {
             <div className="space-y-6">
               <h2
                 ref={headingRef}
-                className="text-6xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-none text-white opacity-0"
+                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-none text-white opacity-0"
                 style={{ perspective: "1000px" }}
               >
                 LET'S TALK
               </h2>
 
               <div className="space-y-4">
-                <p className="contact-description text-lg md:text-xl text-neutral-300 leading-relaxed opacity-0">
+                <p className="contact-description text-lg md:text-xl text-neutral-300 leading-relaxed opacity-0 font-normal">
                   GOT A QUESTION, PROPOSAL, PROJECT, OR WANT TO WORK TOGETHER ON
                   SOMETHING?
                 </p>
@@ -191,7 +191,7 @@ export default function ContactSection() {
                       <div className="relative p-6 rounded-full bg-neutral-900/50 border border-neutral-800 hover:border-white hover:bg-white/5 transition-all duration-300">
                         <Icon className="h-8 w-8 text-neutral-400 group-hover:text-white transition-colors" />
                       </div>
-                      <span className="text-2xl font-black text-neutral-400 group-hover:text-white transition-colors">
+                      <span className="text-xl font-bold text-neutral-400 group-hover:text-white transition-colors">
                         {labels[social.icon] ||
                           social.name.slice(0, 2).toUpperCase()}
                       </span>
@@ -205,22 +205,22 @@ export default function ContactSection() {
               className="lg:text-right space-y-4 pt-12 opacity-0"
             >
               <div className="space-y-2">
-                <p className="text-neutral-500 text-sm uppercase tracking-wider">
+                <p className="text-neutral-500 text-sm uppercase tracking-wider font-medium">
                   Email
                 </p>
                 <a
                   href={`mailto:${personalInfo.email}`}
-                  className="text-lg text-neutral-300 hover:text-white transition-colors inline-block hover:underline hover:underline-offset-4"
+                  className="text-lg text-neutral-300 hover:text-white transition-colors inline-block hover:underline hover:underline-offset-4 font-normal"
                 >
                   {personalInfo.email}
                 </a>
               </div>
 
               <div className="space-y-2">
-                <p className="text-neutral-500 text-sm uppercase tracking-wider">
+                <p className="text-neutral-500 text-sm uppercase tracking-wider font-medium">
                   Location
                 </p>
-                <p className="text-lg text-neutral-300">
+                <p className="text-lg text-neutral-300 font-normal">
                   {personalInfo.location}
                 </p>
               </div>

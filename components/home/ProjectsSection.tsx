@@ -1,15 +1,25 @@
 "use client";
 
 import CircularGallery from "@/components/circularprojects/CircularGallery";
-import { fadeUp, projects } from "@/constants/constants";
+import { projects } from "@/constants/constants";
 import type { Project } from "@/types/types";
-import { motion } from "motion/react";
-import { useState } from "react";
+import { useState, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
 import ProjectDetailModal from "./ProjectDetailModal";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function ProjectsSection() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const sectionRef = useRef<HTMLElement>(null);
+  const headingRef = useRef<HTMLHeadingElement>(null);
+  const descriptionRef = useRef<HTMLParagraphElement>(null);
+  const galleryRef = useRef<HTMLDivElement>(null);
+  const instructionRef = useRef<HTMLDivElement>(null);
 
   const galleryItems = projects.map((project) => ({
     image: project.imageUrl || "/projects/placeholder.jpg",
@@ -21,34 +31,119 @@ export default function ProjectsSection() {
     setIsModalOpen(true);
   };
 
+  useGSAP(
+    () => {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 80%",
+          toggleActions: "play none none reverse",
+        },
+      });
+
+      if (headingRef.current) {
+        tl.fromTo(
+          headingRef.current,
+          {
+            opacity: 0,
+            y: 80,
+            clipPath: "inset(100% 0% 0% 0%)",
+          },
+          {
+            opacity: 1,
+            y: 0,
+            clipPath: "inset(0% 0% 0% 0%)",
+            duration: 1.2,
+            ease: "power4.out",
+          }
+        );
+      }
+
+      if (descriptionRef.current) {
+        tl.fromTo(
+          descriptionRef.current,
+          { opacity: 0, y: 30 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            ease: "power3.out",
+          },
+          "-=0.6"
+        );
+      }
+
+      if (galleryRef.current) {
+        tl.fromTo(
+          galleryRef.current,
+          {
+            opacity: 0,
+            scale: 0.9,
+            y: 40,
+          },
+          {
+            opacity: 1,
+            scale: 1,
+            y: 0,
+            duration: 1,
+            ease: "power3.out",
+          },
+          "-=0.4"
+        );
+      }
+
+      if (instructionRef.current) {
+        tl.fromTo(
+          instructionRef.current,
+          { opacity: 0, y: 20 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.6,
+            ease: "power2.out",
+          },
+          "-=0.3"
+        );
+
+        gsap.to(instructionRef.current, {
+          opacity: 0.7,
+          duration: 1.5,
+          repeat: -1,
+          yoyo: true,
+          ease: "sine.inOut",
+          delay: 2,
+        });
+      }
+    },
+    { scope: sectionRef }
+  );
+
   return (
-    <section id="projects" className="min-h-screen py-20 px-6 md:px-12">
+    <section
+      ref={sectionRef}
+      id="projects"
+      className="min-h-screen py-20 px-6 md:px-12"
+    >
       <div className="max-w-7xl mx-auto">
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={fadeUp}
-          className="mb-16"
-        >
-          <h2 className="text-4xl md:text-6xl lg:text-7xl font-black leading-tight mb-6">
+        <div className="mb-16">
+          <h2
+            ref={headingRef}
+            className="text-4xl md:text-6xl lg:text-7xl font-black leading-tight mb-6 opacity-0"
+          >
             PROJECTS THAT SHOWCASE MY TECHNICAL EXPERTISE AND CREATIVITY
           </h2>
-          <p className="text-lg md:text-xl text-neutral-300 leading-relaxed max-w-3xl">
+          <p
+            ref={descriptionRef}
+            className="text-lg md:text-xl text-neutral-300 leading-relaxed max-w-3xl opacity-0"
+          >
             Explore my portfolio of innovative solutions—from scalable web
             platforms to AI-driven tools. Each project demonstrates
             problem-solving abilities, modern architecture, and attention to
             performance.
           </p>
-        </motion.div>
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={fadeUp}
-          transition={{ delay: 0.3 }}
-          className="w-full h-150 md:h-175"
-        >
+        </div>
+
+        <div ref={galleryRef} className="w-full h-150 md:h-175 opacity-0">
           <CircularGallery
             items={galleryItems}
             bend={3}
@@ -59,20 +154,13 @@ export default function ProjectsSection() {
             scrollEase={0.05}
             onItemClick={handleProjectClick}
           />
-        </motion.div>
+        </div>
 
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={fadeUp}
-          transition={{ delay: 0.5 }}
-          className="text-center mt-8"
-        >
+        <div ref={instructionRef} className="text-center mt-8 opacity-0">
           <p className="text-neutral-400 text-sm md:text-base">
             Scroll or drag to explore • Click on any project to view details
           </p>
-        </motion.div>
+        </div>
       </div>
 
       <ProjectDetailModal

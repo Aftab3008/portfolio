@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import HomeDock from "@/components/home/HomeDock";
 import HeroSection from "@/components/home/HeroSection";
 import SkillsSection from "@/components/home/SkillsSection";
@@ -12,14 +13,33 @@ import EducationSection from "@/components/home/EducationSection";
 import ContactSection from "@/components/home/ContactSection";
 import Footer from "@/components/home/Footer";
 import LoadingScreen from "@/components/LoadingScreen";
+import Blobity from "blobity";
+import useBlobity from "blobity/lib/react/useBlobity";
+import { blobOptions } from "@/lib/BlobConfig";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Home() {
+  const blobity = useBlobity(blobOptions);
+  const blobityRef = useRef<Blobity | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const loadingRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Prevent scrolling during loading
+    if (blobity.current) {
+      blobityRef.current = blobity.current;
+    }
+
+    return () => {
+      if (blobityRef.current) {
+        blobityRef.current.destroy();
+        blobityRef.current = null;
+      }
+    };
+  }, []);
+
+  useEffect(() => {
     document.documentElement.classList.add("overflow-hidden");
     return () => {
       document.documentElement.classList.remove("overflow-hidden");
@@ -27,7 +47,6 @@ export default function Home() {
   }, []);
 
   useGSAP(() => {
-    // Set initial states
     gsap.set(loadingRef.current, { opacity: 1 });
     gsap.set(contentRef.current, { opacity: 0 });
     gsap.set(".section-animate", { opacity: 0, y: 30 });
@@ -35,14 +54,12 @@ export default function Home() {
     const timeline = gsap.timeline({
       onComplete: () => {
         setIsLoading(false);
-        // Restore scrolling
         document.documentElement.classList.remove("overflow-hidden");
       },
     });
 
-    // Show loading screen for 2.5 seconds, then animate content in
     timeline
-      .to({}, { duration: 2.5 }) // Wait for 2.5 seconds
+      .to({}, { duration: 2.5 })
       .to(loadingRef.current, {
         opacity: 0,
         duration: 0.5,
@@ -55,7 +72,7 @@ export default function Home() {
           duration: 0.8,
           ease: "power2.out",
         },
-        "-=0.3" // Start slightly before loading screen finishes
+        "-=0.3"
       )
       .to(
         ".section-animate",
@@ -79,7 +96,7 @@ export default function Home() {
       )}
       <div ref={contentRef} className="relative w-full">
         <div className="section-animate">
-          <HeroSection />
+          <HeroSection isVisible={!isLoading} />
         </div>
         <div className="section-animate">
           <SkillsSection />

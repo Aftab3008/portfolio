@@ -1,6 +1,5 @@
 import type { Variants } from "motion/react";
 import type {
-  Achievement,
   Education,
   Experience,
   Project,
@@ -264,12 +263,12 @@ export const socialLinks: SocialLink[] = [
     icon: "Linkedin",
     handle: "@aftab005",
   },
-  {
-    name: "Twitter",
-    url: "https://twitter.com/shaikaftab769879",
-    icon: "Twitter",
-    handle: "@shaikaftab769879",
-  },
+  // {
+  //   name: "Twitter",
+  //   url: "https://twitter.com/shaikaftab769879",
+  //   icon: "Twitter",
+  //   handle: "@shaikaftab769879",
+  // },
   {
     name: "Email",
     url: "mailto:shaikaftab005@gmail.com",
@@ -318,4 +317,13 @@ export const techLogos: TechLogo[] = [
   // API & Deploy
   // { icon: "/icons/graphql.svg", title: "GraphQL" },
   { icon: "/icons/vercel_dark.svg", title: "Vercel" },
+];
+
+export const quickLinks = [
+  "Hero",
+  "Skills",
+  "Experience",
+  "Projects",
+  "Education",
+  "Contact",
 ];

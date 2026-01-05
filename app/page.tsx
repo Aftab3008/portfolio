@@ -16,6 +16,7 @@ import LoadingScreen from "@/components/LoadingScreen";
 import Blobity from "blobity";
 import useBlobity from "blobity/lib/react/useBlobity";
 import { blobOptions } from "@/lib/BlobConfig";
+import { useScrollControl } from "@/components/SmoothScroll";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -25,6 +26,15 @@ export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
   const loadingRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
+  const { stopScroll, startScroll } = useScrollControl();
+
+  useEffect(() => {
+    if (isLoading) {
+      stopScroll();
+    } else {
+      startScroll();
+    }
+  }, [isLoading, stopScroll, startScroll]);
 
   useEffect(() => {
     if (isLoading) {

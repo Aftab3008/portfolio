@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+@import "lenis/dist/lenis.css";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -128,7 +129,7 @@ html.overflow-hidden {
   }
 
   html {
-    scroll-behavior: smooth;
+    /* scroll-behavior removed - handled by Lenis smooth scroll */
     font-size: 16px;
   }
 

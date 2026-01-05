@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import SmoothScroll from "@/components/SmoothScroll";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,7 +30,15 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased dark`}
         suppressHydrationWarning
       >
-        {children}
+        <SmoothScroll
+          lerp={0.08}
+          duration={1.2}
+          wheelMultiplier={0.8}
+          touchMultiplier={1.5}
+          maxScrollDelta={115}
+        >
+          {children}
+        </SmoothScroll>
       </body>
     </html>
   );

@@ -14,9 +14,61 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Aftab Shaik - Software Engineer",
+  title: {
+    default: "Shaik Aftab | Software Developer",
+    template: "%s | Shaik Aftab",
+  },
   description:
-    "Portfolio website of Aftab Shaik, a software engineer specializing in full-stack web development, React, Node.js, and cloud technologies.",
+    "Portfolio of Shaik Aftab — a passionate Software Developer specializing in full-stack web development with React, Next.js, Node.js, and cloud technologies. Building exceptional digital experiences.",
+  keywords: [
+    "Shaik Aftab",
+    "Software Developer",
+    "Full Stack Developer",
+    "React Developer",
+    "Next.js",
+    "Node.js",
+    "TypeScript",
+    "Web Developer",
+    "Portfolio",
+    "Hyderabad",
+    "India",
+  ],
+  authors: [{ name: "Shaik Aftab", url: "https://github.com/Aftab3008" }],
+  creator: "Shaik Aftab",
+  metadataBase: new URL("https://www.aftabshaik.space"),
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://www.aftabshaik.space",
+    siteName: "Shaik Aftab Portfolio",
+    title: "Shaik Aftab | Software Developer",
+    description:
+      "Passionate Software Developer building exceptional digital experiences with React, Next.js, Node.js, and modern web technologies.",
+    images: [
+      {
+        url: "/profile_image.png",
+        width: 1200,
+        height: 630,
+        alt: "Shaik Aftab - Software Developer Portfolio",
+      },
+    ],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  icons: {
+    icon: "/globe.svg",
+    // shortcut: "",
+    // apple: "",
+  },
 };
 
 export default function RootLayout({

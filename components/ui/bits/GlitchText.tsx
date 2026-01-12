@@ -17,7 +17,7 @@ interface CustomCSSProperties extends CSSProperties {
 
 const GlitchText: FC<GlitchTextProps> = ({
   children,
-  speed = 0.5,
+  speed = 0.25,
   enableShadows = true,
   enableOnHover = false,
   className = "",

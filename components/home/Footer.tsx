@@ -1,10 +1,11 @@
 "use client";
 
-import { personalInfo, quickLinks, socialLinks } from "@/constants/constants";
+import { personalInfo, socialLinks } from "@/constants/constants";
 import { useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import { Github, Linkedin, Mail, MapPin, Briefcase } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -47,18 +48,11 @@ export default function Footer() {
         );
       }
 
-      const quickLinks = gsap.utils.toArray(".footer-quick-link");
-      if (quickLinks.length > 0) {
+      if (rightColumnRef.current) {
         tl.fromTo(
-          quickLinks,
-          { opacity: 0, x: 20 },
-          {
-            opacity: 1,
-            x: 0,
-            duration: 0.4,
-            stagger: 0.08,
-            ease: "power2.out",
-          },
+          rightColumnRef.current,
+          { opacity: 0, y: 30 },
+          { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" },
           "-=0.3"
         );
       }
@@ -113,21 +107,42 @@ export default function Footer() {
             </p>
           </div>
 
-          <div ref={rightColumnRef} className="space-y-3">
+          <div ref={rightColumnRef} className="space-y-4 opacity-0">
             <h4 className="text-base md:text-lg font-semibold text-white inline-block w-fit">
-              Quick Links
+              Let&apos;s Connect
             </h4>
-            <nav className="flex flex-col space-y-2">
-              {quickLinks.map((section) => (
+            <div className="flex flex-col space-y-3">
+              <div className="flex items-center gap-2">
+                <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse" />
+                <span className="text-neutral-400 text-sm font-normal">
+                  Open to opportunities
+                </span>
+              </div>
+              <div className="flex items-center gap-2 text-neutral-400 text-sm">
+                <MapPin size={14} className="text-neutral-500" />
+                <span>{personalInfo.location}</span>
+              </div>
+              <div className="flex items-center gap-2 text-neutral-400 text-sm">
+                <Briefcase size={14} className="text-neutral-500" />
+                <span>Full-time / Internship</span>
+              </div>
+            </div>
+            <div className="flex items-center gap-8 pt-4">
+              {socialLinks.map((link) => (
                 <a
-                  key={section}
-                  href={`#${section.toLowerCase()}`}
-                  className="footer-quick-link text-neutral-400 hover:text-white transition-colors text-sm opacity-0 inline-block w-fit hover:translate-x-1 transform duration-200 hover:underline hover:underline-offset-4 font-normal"
+                  key={link.name}
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-neutral-500 hover:text-white transition-colors duration-200"
+                  aria-label={link.name}
                 >
-                  {section}
+                  {link.icon === "Github" && <Github size={18} />}
+                  {link.icon === "Linkedin" && <Linkedin size={18} />}
+                  {link.icon === "Mail" && <Mail size={18} />}
                 </a>
               ))}
-            </nav>
+            </div>
           </div>
         </div>
 

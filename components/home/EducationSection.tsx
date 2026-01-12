@@ -166,7 +166,7 @@ export default function EducationSection() {
 
               {edu.achievements && edu.achievements.length > 0 && (
                 <div className="pt-8">
-                  <h4 className="text-lg md:text-xl font-semibold text-white mb-8">
+                  <h4 className="text-lg md:text-xl font-semibold text-white mb-8 pointer-events-none cursor-default select-none">
                     Achievements
                   </h4>
                   <div className="space-y-12">

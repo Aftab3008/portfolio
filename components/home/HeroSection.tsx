@@ -197,6 +197,7 @@ export default function HeroSection({ isVisible = true }: HeroSectionProps) {
               src="/profile_image.png"
               alt={personalInfo.name}
               fill
+              priority
               className="object-cover"
             />
           </div>

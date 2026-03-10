@@ -127,11 +127,13 @@ html.overflow-hidden {
   }
   body {
     @apply bg-background text-foreground font-normal;
+    overflow-x: hidden;
   }
 
   html {
     /* scroll-behavior removed - handled by Lenis smooth scroll */
     font-size: 16px;
+    overflow-x: hidden;
   }
 
   /* Typography utility classes */

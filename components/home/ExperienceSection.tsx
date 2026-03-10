@@ -117,7 +117,7 @@ export default function ExperienceSection() {
         <div className="mb-20">
           <h2
             ref={headingRef}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 max-w-5xl opacity-0"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-6 max-w-5xl opacity-0"
           >
             WHERE I'VE BUILT AND LEARNED...
           </h2>
@@ -127,7 +127,7 @@ export default function ExperienceSection() {
           {experiences.map((experience) => (
             <div
               key={experience.company + experience.role}
-              className="experience-card border-l-2 border-neutral-700 pl-8 md:pl-12 opacity-0"
+              className="experience-card border-l-2 border-neutral-700 pl-4 md:pl-8 lg:pl-12 opacity-0"
             >
               <div className="space-y-6">
                 <div>

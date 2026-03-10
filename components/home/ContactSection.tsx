@@ -145,7 +145,7 @@ export default function ContactSection() {
             <div className="space-y-6">
               <h2
                 ref={headingRef}
-                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-none text-white opacity-0"
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight leading-none text-white opacity-0"
                 style={{ perspective: "1000px" }}
               >
                 LET'S TALK
@@ -169,7 +169,7 @@ export default function ContactSection() {
           </div>
 
           <div ref={rightContentRef} className="space-y-6">
-            <div ref={socialContainerRef} className="flex lg:justify-end gap-8">
+            <div ref={socialContainerRef} className="flex lg:justify-end gap-4 md:gap-8">
               {socialLinks
                 .filter((link) => link.icon !== "Mail")
                 .map((social) => {

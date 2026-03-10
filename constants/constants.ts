@@ -80,7 +80,7 @@ export const personalInfo = {
   location: "Hyderabad, India",
   bio: "Passionate software developer with expertise in building scalable web applications. I love turning complex problems into simple, beautiful, and intuitive solutions. When I'm not coding, you can find me exploring new technologies or contributing to open-source projects.",
   resumeUrl:
-    "https://drive.google.com/file/d/10lTOas4_JKpLBeExJEmufMg1wM976bRk/view?usp=sharing",
+    "https://drive.google.com/file/d/1425q24VMHAQyNnRFdGscUTap9nGz0GJb/view?usp=sharing",
 };
 
 export const skillCategories = {

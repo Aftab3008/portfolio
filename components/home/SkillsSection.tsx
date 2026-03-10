@@ -128,7 +128,7 @@ export default function SkillsSection() {
         <div className="mb-20">
           <h2
             ref={headingRef}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 max-w-5xl opacity-0"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-6 max-w-5xl opacity-0"
           >
             I MAKE SOFTWARES THAT WORKS FOR YOU, NOT THE OTHER WAY AROUND...
           </h2>
@@ -157,7 +157,7 @@ export default function SkillsSection() {
           />
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-24">
           <div ref={bioRef} className="space-y-8 opacity-0">
             <p className="text-lg md:text-xl text-neutral-300 leading-relaxed font-normal">
               {personalInfo.bio}

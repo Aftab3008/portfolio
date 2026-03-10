@@ -37,11 +37,11 @@ export default function HomeDock() {
   const itemsWithMagnet = items.map((item) => ({
     ...item,
     text: (
-      <Magnet padding={50} magnetStrength={4}>
+      <Magnet padding={30} magnetStrength={4}>
         {item.text}
       </Magnet>
     ),
   }));
 
-  return <Dock items={itemsWithMagnet} panelHeight={56} className="px-20" />;
+  return <Dock items={itemsWithMagnet} panelHeight={48} />;
 }

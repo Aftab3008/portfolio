@@ -86,16 +86,20 @@ export default function EducationSection() {
             }
           );
 
-          gsap.to(image.querySelector("img"), {
-            yPercent: -15,
-            ease: "none",
-            scrollTrigger: {
-              trigger: item,
-              start: "top bottom",
-              end: "bottom top",
-              scrub: 1,
-            },
-          });
+          gsap.fromTo(
+            image.querySelector("img"),
+            { yPercent: 5 },
+            {
+              yPercent: -10,
+              ease: "none",
+              scrollTrigger: {
+                trigger: item,
+                start: "top bottom",
+                end: "bottom top",
+                scrub: 1,
+              },
+            }
+          );
         }
 
         if (content) {
@@ -129,7 +133,7 @@ export default function EducationSection() {
         <div className="mb-20">
           <h2
             ref={headingRef}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 opacity-0"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-6 opacity-0"
           >
             EDUCATION
           </h2>
@@ -184,7 +188,7 @@ export default function EducationSection() {
                               <img
                                 src={achievement.imageUrl}
                                 alt={achievement.title}
-                                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                className="w-full h-[120%] object-cover group-hover:scale-105 transition-transform duration-500"
                               />
                               <div className="absolute inset-0 bg-linear-to-t from-black/60 to-transparent" />
                             </div>

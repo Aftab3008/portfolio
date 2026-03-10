@@ -63,7 +63,7 @@ function DockItem({
       onClick={onClick}
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
-      className={`relative inline-flex items-center justify-center rounded-lg bg-transparent hover:bg-white/5 transition-all duration-300 text-white/80 hover:text-white px-6 py-2.5 cursor-pointer group ${className}`}
+      className={`relative inline-flex items-center justify-center rounded-lg bg-transparent hover:bg-white/5 transition-all duration-300 text-white/80 hover:text-white px-3 py-1.5 sm:px-4 sm:py-2 md:px-6 md:py-2.5 cursor-pointer group ${className}`}
       tabIndex={0}
       role="button"
       aria-haspopup="true"
@@ -125,7 +125,7 @@ type DockIconProps = {
 function DockIcon({ children, className = "" }: DockIconProps) {
   return (
     <div
-      className={`flex items-center justify-center text-sm font-medium tracking-wide ${className}`}
+      className={`flex items-center justify-center text-xs sm:text-sm font-medium tracking-wide ${className}`}
     >
       {children}
     </div>
@@ -141,13 +141,13 @@ export default function Dock({
   return (
     <div
       style={{ scrollbarWidth: "none" }}
-      className="fixed bottom-0 left-0 right-0 flex justify-center items-end pb-8 z-50"
+      className="fixed bottom-0 left-0 right-0 flex justify-center items-end pb-4 sm:pb-6 md:pb-8 z-50 px-4"
     >
       <motion.div
         initial={{ y: 100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
-        className={`${className} flex items-center w-fit gap-4 rounded-2xl border border-white/20 py-2 px-4 bg-black/60 backdrop-blur-xl shadow-2xl shadow-black/50`}
+        className={`${className} flex items-center w-fit max-w-[calc(100vw-2rem)] gap-1 sm:gap-2 md:gap-4 rounded-xl sm:rounded-2xl border border-white/20 py-1.5 sm:py-2 px-2 sm:px-3 md:px-4 bg-black/60 backdrop-blur-xl shadow-2xl shadow-black/50`}
         style={{ height: panelHeight }}
         role="toolbar"
         aria-label="Application dock"

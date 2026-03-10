@@ -126,7 +126,7 @@ export default function HeroSection({ isVisible = true }: HeroSectionProps) {
     <section
       ref={containerRef}
       id="hero"
-      className="relative min-h-screen flex flex-col overflow-hidden"
+      className="relative min-h-screen flex flex-col overflow-hidden w-full"
     >
       <div className="absolute inset-0 z-0">
         <Silk
@@ -140,11 +140,11 @@ export default function HeroSection({ isVisible = true }: HeroSectionProps) {
 
       <div
         ref={navRef}
-        className="relative z-20 flex items-center justify-between p-6 md:p-8 opacity-0"
+        className="relative z-20 flex items-center justify-between p-3 sm:p-4 md:p-6 lg:p-8 gap-2 sm:gap-4 opacity-0"
       >
         <Button
           variant="outline"
-          className="border-neutral-700 hover:bg-neutral-800/50 hover:border-neutral-600 text-neutral-200 font-medium tracking-wide transition-all duration-300 hover:scale-105"
+          className="border-neutral-700 hover:bg-neutral-800/50 hover:border-neutral-600 text-neutral-200 font-medium tracking-wide transition-all duration-300 hover:scale-105 text-xs sm:text-sm px-2.5 py-1.5 sm:px-4 sm:py-2"
           asChild
         >
           <a
@@ -152,12 +152,13 @@ export default function HeroSection({ isVisible = true }: HeroSectionProps) {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <FaFileAlt className="mr-2 h-4 w-4" />
-            VIEW RESUME
+            <FaFileAlt className="mr-1.5 sm:mr-2 h-3 w-3 sm:h-4 sm:w-4" />
+            <span className="hidden sm:inline">VIEW RESUME</span>
+            <span className="sm:hidden">RESUME</span>
           </a>
         </Button>
 
-        <div ref={socialLinksRef} className="flex items-center gap-3">
+        <div ref={socialLinksRef} className="flex items-center gap-1.5 sm:gap-2 md:gap-3">
           {topSocialLinks.map((social) => {
             const Icon = iconMap[social.icon];
             return (
@@ -166,10 +167,10 @@ export default function HeroSection({ isVisible = true }: HeroSectionProps) {
                 href={social.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="social-link-hero p-3 rounded-xl bg-neutral-800/40 border border-neutral-700/50 text-neutral-300 hover:text-white hover:bg-neutral-800/70 hover:border-neutral-600 transition-all duration-300 backdrop-blur-sm hover:scale-110 hover:-translate-y-1"
+                className="social-link-hero p-2 sm:p-2.5 md:p-3 rounded-lg sm:rounded-xl bg-neutral-800/40 border border-neutral-700/50 text-neutral-300 hover:text-white hover:bg-neutral-800/70 hover:border-neutral-600 transition-all duration-300 backdrop-blur-sm hover:scale-110 hover:-translate-y-1"
                 aria-label={social.name}
               >
-                <Icon className="h-6 w-6" />
+                <Icon className="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6" />
               </a>
             );
           })}
@@ -178,10 +179,10 @@ export default function HeroSection({ isVisible = true }: HeroSectionProps) {
 
       <div className="relative z-10 flex-1 flex flex-col items-center justify-center px-6 md:px-12 -mt-16">
         <div className="text-center mb-8">
-          <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black tracking-tighter leading-none">
+          <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black tracking-tighter leading-none">
             <div
               ref={nameRef}
-              className="text-white whitespace-nowrap opacity-0"
+              className="text-white opacity-0"
             >
               {personalInfo.name}
             </div>
@@ -203,15 +204,15 @@ export default function HeroSection({ isVisible = true }: HeroSectionProps) {
           </div>
         </div>
 
-        <div className="w-full max-w-7xl grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-end">
-          <div ref={bioLeftRef} className="text-left opacity-0">
-            <p className="text-white text-base md:text-lg leading-relaxed font-medium text-glow">
+        <div className="w-full max-w-7xl grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 items-end px-2 sm:px-0">
+          <div ref={bioLeftRef} className="text-center md:text-left opacity-0">
+            <p className="text-white text-sm sm:text-base md:text-lg leading-relaxed font-medium text-glow">
               {personalInfo.bio}
             </p>
           </div>
 
-          <div ref={bioRightRef} className="text-right opacity-0">
-            <p className="text-white text-base md:text-lg leading-relaxed font-medium text-glow">
+          <div ref={bioRightRef} className="text-center md:text-right opacity-0">
+            <p className="text-white text-sm sm:text-base md:text-lg leading-relaxed font-medium text-glow">
               {personalInfo.tagline}{" "}
               <span className="inline-flex items-center">
                 <span className="inline-block w-2 h-2 bg-green-500 rounded-full ml-2 animate-pulse" />

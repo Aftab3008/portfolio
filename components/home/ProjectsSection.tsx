@@ -128,7 +128,7 @@ export default function ProjectsSection() {
         <div className="mb-16">
           <h2
             ref={headingRef}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 opacity-0"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-6 opacity-0"
           >
             PROJECTS THAT SHOWCASE MY TECHNICAL EXPERTISE AND CREATIVITY
           </h2>
@@ -143,7 +143,7 @@ export default function ProjectsSection() {
           </p>
         </div>
 
-        <div ref={galleryRef} className="w-full h-150 md:h-175 opacity-0">
+        <div ref={galleryRef} className="w-full h-80 sm:h-100 md:h-150 lg:h-175 opacity-0">
           <CircularGallery
             items={galleryItems}
             bend={3}
